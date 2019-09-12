@@ -87,7 +87,11 @@ The MSSQL driver in OGR supports the OGRLayer::StartTransaction(),
 OGRLayer::CommitTransaction() and OGRLayer::RollbackTransaction() calls
 in the normal SQL sense.
 
-Creation Issues
+Creation IssuesConnecting with username/password
+
+   ::
+   
+    ogrinfo -al   MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=no;UID=user;PWD=pwd
 ---------------
 
 This driver doesn't support creating new databases, you might want to
@@ -119,7 +123,11 @@ Layer Creation Options
    "NO" then the types float, int and varchar will be used instead. The
    default is "YES".
 -  **DIM={2,3}**: Control the dimension of the layer. Defaults to 3.
--  **GEOMETRY_NAME**: Set the name of geometry column in the new table.
+-  **GEOMETRY_NAME**: Set theConnecting with username/password
+
+   ::
+   
+    ogrinfo -al   MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=no;UID=user;PWD=pwd name of geometry column in the new table.
    If omitted it defaults to *ogr_geometry*.. Note: option was called
    GEOM_NAME in releases before GDAL 2
 -  **SCHEMA**: Set name of schema for new table. If this parameter is
@@ -221,3 +229,9 @@ Creating a spatial index
    ::
 
       ogrinfo -sql "create spatial index on rivers" "MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=yes"
+
+Connecting with username/password
+
+   ::
+   
+    ogrinfo -al   MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=no;UID=user;PWD=pwd
