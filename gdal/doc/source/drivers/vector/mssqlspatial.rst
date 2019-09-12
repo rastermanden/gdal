@@ -28,6 +28,9 @@ Connecting to a database
       MSSQL:server=.\MSSQLSERVER2008;database=dbname;trusted_connection=yes
 
 In addition to the standard parameters of the `ODBC driver connection
+31
+stringODBC driver connection
+31
 string <http://msdn.microsoft.com/en-us/library/ms130822.aspx>`__ format
 the following custom parameters can also be used in the following
 syntax:
@@ -221,3 +224,9 @@ Creating a spatial index
    ::
 
       ogrinfo -sql "create spatial index on rivers" "MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=yes"
+
+Connecting with username/password
+
+   ::
+   
+    ogrinfo -al   MSSQL:server=.\MSSQLSERVER2008;database=geodb;trusted_connection=no;UID=user;PWD=pwd
